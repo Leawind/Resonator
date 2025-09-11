@@ -19,5 +19,4 @@ Format other languages with EditorConfig.
 1. Enable checkbox `Enable EditorConfig suppport`
 
 [Leawind/Resonator]: https://github.com/Leawind/Resonator
-
 [google-java-format]: https://plugins.jetbrains.com/plugin/8527-google-java-format
