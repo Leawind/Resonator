@@ -1,0 +1,13 @@
+apply plugin: "maven-publish"
+
+description 'Resonator Client'
+
+dependencies {
+    implementation(project(':core')) { transitive true }
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit_jupiter_version}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit_jupiter_version}"
+
+    // Web Socket
+    implementation 'org.java-websocket:Java-WebSocket:1.5.3'
+}

@@ -1,0 +1,21 @@
+apply plugin: "maven-publish"
+
+description 'Resonator Core'
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit_jupiter_version}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit_jupiter_version}"
+
+    // Guava
+    // api "com.google.guava:guava:${guava_version}-jre"
+
+    // Semantic Versioning
+    api "com.github.zafarkhaja:java-semver:${java_semver_version}"
+
+    // GSON
+    api "com.google.code.gson:gson:${gson_version}"
+
+    // jsr305
+    api "com.google.code.findbugs:jsr305:${jsr305_version}"
+
+}
