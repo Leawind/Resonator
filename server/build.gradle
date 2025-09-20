@@ -3,14 +3,17 @@ apply plugin: "maven-publish"
 description 'Resonator Server'
 
 dependencies {
-    implementation(project(':core')) { transitive true }
+  implementation(project(':core')) { transitive true }
 
-    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit_jupiter_version}"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit_jupiter_version}"
-    testImplementation "org.slf4j:slf4j-simple:${slf4j_version}"
+  testImplementation "org.junit.jupiter:junit-jupiter-api:${junit_jupiter_version}"
+  testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit_jupiter_version}"
+  testImplementation "org.slf4j:slf4j-simple:${slf4j_version}"
+  
+  implementation "org.slf4j:slf4j-api:${slf4j_version}"
 
-    implementation "org.slf4j:slf4j-api:${slf4j_version}"
+  // Web Socket
+  implementation 'org.java-websocket:Java-WebSocket:1.5.3'
 
-    // Web Socket
-    implementation 'org.java-websocket:Java-WebSocket:1.5.3'
+  // CQEngine
+  implementation 'com.googlecode.cqengine:cqengine:3.6.0'
 }

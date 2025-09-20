@@ -1,43 +1,41 @@
 description "Resonator"
 
 subprojects {
-    apply plugin: "java-library"
+  apply plugin: "java-library"
 
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(17)
-        }
+  java {
+    toolchain {
+      languageVersion = JavaLanguageVersion.of(17)
     }
+  }
 
-    repositories {
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/apache-snapshots' }
-        mavenCentral()
-        mavenLocal()
-    }
+  repositories {
+    mavenCentral()
+    mavenLocal()
+  }
 
 
-    jar {
-        setDuplicatesStrategy DuplicatesStrategy.INCLUDE
-        from rootProject.file('LICENSE')
-    }
+  jar {
+    setDuplicatesStrategy DuplicatesStrategy.INCLUDE
+    from rootProject.file('LICENSE')
+  }
 
 
-    test {
-        useJUnitPlatform()
-    }
+  test {
+    useJUnitPlatform()
+  }
 
-    dependencies {
-    }
+  dependencies {
+    implementation 'com.google.guava:guava:33.3.1-jre'
+  }
 
-    javadoc.options.encoding = 'UTF-8'
+  javadoc.options.encoding = 'UTF-8'
 
-    tasks.withType(JavaCompile).configureEach {
-        options.encoding 'UTF-8'
-    }
+  tasks.withType(JavaCompile).configureEach {
+    options.encoding 'UTF-8'
+  }
 
-    tasks.withType(GroovyCompile).configureEach {
-        options.encoding 'UTF-8'
-    }
+  tasks.withType(GroovyCompile).configureEach {
+    options.encoding 'UTF-8'
+  }
 }
