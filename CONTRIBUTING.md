@@ -20,3 +20,12 @@ Format other languages with EditorConfig.
 
 [Leawind/Resonator]: https://github.com/Leawind/Resonator
 [google-java-format]: https://plugins.jetbrains.com/plugin/8527-google-java-format
+
+## Coding Style
+
+### Nullability
+
+Use `@javax.annotation.Nullable` and `@javax.annotation.NonNull` annotations to
+specify nullability.
+
+If no nullabality annotation, it is considered non-null
