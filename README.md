@@ -1,10 +1,10 @@
-中文 | [English][en]
-
----
-
 # Resonator
 
 Resonator 是一个基于 WebSocket 的插件化通信框架，支持客户端与服务端之间的查询和事件订阅推送机制。
+
+> **注意：本项目还在紧张开发中**
+>
+> 大致计划：使用 java 实现服务端并用于 Minecraft 模组，用 node 或 deno 实现客户端，并开发一些游戏相关插件，从而可以通过 Typescript 方便快速地开发 Minecraft 小游戏服务端逻辑。
 
 ## 核心功能
 
@@ -46,22 +46,15 @@ sequenceDiagram
     A ->> CP: 调用插件方法订阅事件
     CP->>C: 调用
 
-    C->>S: 发送订阅请求(插件ID, 事件ID)
+    C->>S: 发送订阅请求(插件ID, 事件ID, 触发条件)
     activate S
     S->>SP: 注册事件监听器
     S-->> C: 返回订阅ID
     deactivate S
 
-    loop 当事件发生时
+    loop 当事件发生且满足触发条件时
       SP-->>S: 事件触发
       S-->>C: 推送事件数据
       C-->>A: 触发回调
     end
 ```
-
-## 许可证
-
-本项目采用 [MIT](./LICENSE) 许可证。
-
-[zh]: README.zh.md
-[en]: README.md
